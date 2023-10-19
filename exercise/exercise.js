@@ -1,7 +1,11 @@
 function nicknameMap(persons) {
-	for (i = 0; i < persons.length; i++) {
-		persons[i] = "<" + persons[i].name + ">-<" + persons[i].age + ">";
+	let nicknames = [];
+	let i = 0;
+	for (person in persons) {
+		nicknames[i] = "<" + persons[i].name + ">-<" + persons[i].age + ">";
+		i++;
 	}
+	return nicknames;
 }
 
 const persons = [
