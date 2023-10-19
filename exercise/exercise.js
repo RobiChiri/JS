@@ -4,6 +4,6 @@ const order = {};
 //   console.log('City is required');
 // }
 
-if (order.city === undefined) {
-  console.log("City is required");
+if (order?.customer?.address?.city === undefined) {
+	console.log("City is required");
 }
