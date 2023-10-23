@@ -1,5 +1,12 @@
 function uncompletedNotes(notes) {
-	return notes.filter(el => el.todos.forEach(() => el.todos.done === false));
+	let uncompletedTodos = [];
+
+	notes.forEach(note => {
+		const uncompleted = note.todos.filter(todo => !todo.done);
+		uncompletedTodos = [...uncompletedTodos, ...uncompleted]; // used the spread operator for a better looking print
+	});
+
+	return uncompletedTodos;
 }
 
 const notes = [
