@@ -1,44 +1,44 @@
 class Person {
 	constructor(firstName, lastName, age) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.age = age;
+		this._firstName = firstName;
+		this._lastName = lastName;
+		this._age = age;
 	}
 
 	set firstName(newName) {
 		if (typeof newName != String) return "";
-		else this.firstName = newName;
+		else this._firstName = newName;
 	}
 
 	set lastName(newLastName) {
 		if (typeof newLastName != String) return "";
-		else this.lastName = newLastName;
+		else this._lastName = newLastName;
 	}
 
 	set age(newAge) {
 		if (newAge < 1) {
-			this.age = 1;
+			this._age = 1;
 		} else if (newAge > 110) {
-			this.age = 110;
+			this._age = 110;
 		} else {
-			this.age = newAge;
+			this._age = newAge;
 		}
 	}
 
 	get firstName() {
-		return this.firstName;
+		return this._firstName;
 	}
 
 	get lastName() {
-		return this.lastName;
+		return this._lastName;
 	}
 
 	get age() {
-		return this.age;
+		return this._age;
 	}
 
 	get fullName() {
-		return this.firstName + " " + this.lastName;
+		return this._firstName + " " + this._lastName;
 	}
 }
 const person = new Person("Mario", "Rossi", 25);
