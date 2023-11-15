@@ -20,6 +20,19 @@
 <script>
   // code here
 
+  document
+    .getElementById("submit-todo")
+    .addEventListener("click", async (event) => {
+      event.preventDefault();
+
+      const title = document.getElementById("todo-title").value;
+      const completed = document.getElementById("todo-completed").checked;
+
+      post()
+        .then((postData) => console.log(postData))
+        .catch((err) => console.error(err));
+    });
+
   async function post(title, completed) {
     const url = "https://jsonplaceholder.typicode.com/posts";
     const data = {
@@ -35,11 +48,4 @@
     const postData = await response.json();
     return postData;
   }
-
-  const title = document.getElementById("todo-title").value;
-  const completed = document.getElementById("todo-completed").checked;
-
-  post(title, true)
-    .then((postData) => console.log(postData))
-    .catch((err) => console.error(err));
 </script>
